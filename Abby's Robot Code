@@ -1,0 +1,55 @@
+# Robot is facing the door, moves to the first blue line on the floor in the room
+chassis_ctrl.move_with_distance(0, 3.45)
+gimbal_ctrl.recenter()
+
+# How fast the robot rotates between each blue line stop
+chassis_ctrl.set_rotate_speed(30)
+
+# Robot turns to the right 90 degrees after it reaches the first blue line in the room
+chassis_ctrl.rotate_with_degree(rm_define.clockwise, 90)
+
+# Robot moves to the second blue line in the room
+chassis_ctrl.move_with_distance(0, 1.45)
+gimbal_ctrl.recenter()
+
+# Robot turns to the left 90 degrees after it reaches the second blue line, facing the main desk in the room
+chassis_ctrl.rotate_with_degree(rm_define.anticlockwise, 90)
+
+# Robot moves to the third blue line in the room
+chassis_ctrl.move_with_distance(0, 3.60)
+gimbal_ctrl.recenter()
+
+# Robot turns to the right 90 degrees after it reaches the third blue line, facing the wall with the f on it
+chassis_ctrl.rotate_with_degree(rm_define.clockwise, 90)
+
+# Robot moves towards to the f marker on the wall, than scanning it (put the scanning part under this part of the code)
+chassis_ctrl.move_with_distance(0, 1.21)
+gimbal_ctrl.recenter()
+
+# Robot turns itself around 180 degrees from the left to start the process of looping back the room
+chassis_ctrl.rotate_with_degree(rm_define.anticlockwise, 180)
+
+# Robot moves back to the third line after the 180 degree turn
+chassis_ctrl.move_with_distance(0, 1.21)
+gimbal_ctrl.recenter()
+
+# Robot turns to the left 90 degrees after it reaches the third blue line, facing the wall with the windows
+chassis_ctrl.rotate_with_degree(rm_define.anticlockwise, 90)
+
+# Robot moves back to the second line
+chassis_ctrl.move_with_distance(0, 3.60)
+gimbal_ctrl.recenter()
+
+# Robot turns to the right 90 degrees after it reaches the second line, facing the wall connected to the door
+chassis_ctrl.rotate_with_degree(rm_define.clockwise, 90)
+
+# Robot moves back to the first line
+chassis_ctrl.move_with_distance(0, 1.45)
+gimbal_ctrl.recenter()
+
+# Robot turns to the left 90 degrees after it reaches the first line, facing outside the door
+chassis_ctrl.rotate_with_degree(rm_define.anticlockwise, 90)
+
+# Robot moves back to the starter point outside the room
+chassis_ctrl.move_with_distance(0, 3.45)
+gimbal_ctrl.recenter()
